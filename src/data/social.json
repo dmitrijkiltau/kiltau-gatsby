@@ -1,0 +1,41 @@
+{
+  "menu": [
+    {
+      "name": "Google Play",
+      "href": "https://play.google.com/store/apps/dev?id=4827793113950227625",
+      "icon": "google-play"
+    },
+    {
+      "name": "PayPal",
+      "href": "https://paypal.me/kiltau",
+      "icon": "paypal"
+    },
+    {
+      "name": "Github",
+      "href": "https://github.com/dmitrijkiltau",
+      "icon": "github"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com/einfachdima",
+      "icon": "twitter"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com/einfach.dima",
+      "icon": "instagram"
+    },
+    {
+      "name": "Quora",
+      "href": "https://de.quora.com/profile/Dmitrij-Kiltau",
+      "icon": "quora"
+    },
+    {
+      "name": "Facebook",
+      "href": "https://facebook.com/dmitrijkiltau",
+      "icon": "facebook-f"
+    }
+  ]
+}
