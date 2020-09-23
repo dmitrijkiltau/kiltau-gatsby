@@ -28,5 +28,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`kumbh sans\:300,400,700`],
+        display: "swap",
+      },
+    },
   ],
 }
