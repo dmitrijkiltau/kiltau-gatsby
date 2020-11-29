@@ -35,12 +35,12 @@ const Home = () => {
   const pictureRef = createRef()
   const contentRef = createRef()
 
-  const menuItemAnimation =
-    window.outerWidth > 420
-      ? { x: -150, ease: Power4.easeOut }
-      : { y: -150, ease: Power4.easeOut }
-
   useEffect(() => {
+    const menuItemAnimation =
+      window.outerWidth > 420
+        ? { x: -150, ease: Power4.easeOut }
+        : { y: -150, ease: Power4.easeOut }
+
     timeline
       // Logo animation.
       .fromTo(
