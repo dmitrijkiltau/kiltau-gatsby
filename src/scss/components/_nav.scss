@@ -1,0 +1,35 @@
+nav {
+  grid-area: nav;
+  position: sticky;
+  top: 4rem;
+  z-index: 1;
+
+  #menu {
+    margin-right: -1.5rem;
+    transform: rotate(90deg);
+
+    .menu-item {
+      .icon {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  @media (max-width: $viewport-width-mobile) {
+    height: 100%;
+    top: 0;
+    background-color: $color-secondary;
+
+    #menu {
+      margin-right: 0;
+      padding: 1rem;
+      transform: rotate(0);
+
+      .menu-item {
+        .icon {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}

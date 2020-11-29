@@ -37,22 +37,20 @@ const Home = () => {
 
   useEffect(() => {
     timeline
-      // picture animation
+      // Picture animation.
       .fromTo(
         pictureRef.current,
         { opacity: 0, y: -100 },
         { opacity: 1, y: 0, ease: Power1.easeOut, duration: 2 },
         0
       )
-      // content animation
+      // Content animation.
       .fromTo(
         contentRef.current,
         { opacity: 0, y: 200 },
         { opacity: 1, y: 0, ease: Power1.easeOut, duration: 2 },
         0
       )
-      // fix animation overflow
-      .fromTo(appRef.current, { overflow: "hidden" }, { overflow: "auto" })
       .play()
   })
 
@@ -81,40 +79,46 @@ const Home = () => {
             </div>
           </header>
 
-          <menu>
-            {social.menu.map(item => (
-              <MenuItem key={item.name} item={item} />
-            ))}
-          </menu>
+          <nav>
+            <div id="menu">
+              {social.menu.map(item => (
+                <MenuItem key={item.name} item={item} />
+              ))}
+            </div>
+          </nav>
 
           <main>
-            <div id="picture">
-              <img src={"/images/ich.jpg"} alt="Dima" ref={pictureRef} />
-            </div>
+            <div id="landing">
+              <div id="picture">
+                <img src={"/images/ich.jpg"} alt="Dima" ref={pictureRef} />
+              </div>
 
-            <div id="content" ref={contentRef}>
-              <h1>
-                Hi! Mein Name ist <s>Dmitrij Kiltau</s> Dima.
-              </h1>
-              <p>
-                Angefangen als Hobby Web- & App-Entwickler bin ich mittlerweile
-                in einer Ausbildung als Fachinformatiker für
-                Anwendungsentwicklung. Außerdem probiere ich mich etwas an UI &
-                UX Design oder drehe & schneide hin und wieder (Musik-)Videos
-                für Freunde.
-              </p>
-              <p>
-                Hauptberuflich bin ich eher im Bereich Web-Entwicklung (HTML,
-                CSS, JS, PHP & MySQL) unterwegs. Privat wiederum im Bereich der
-                App-Entwicklung (Kotlin, Flutter/Dart).
-              </p>
+              <div id="content" ref={contentRef}>
+                <h1>
+                  Hi! Mein Name ist <s>Dmitrij Kiltau</s> Dima.
+                </h1>
+                <p>
+                  Angefangen als Hobby Web- & App-Entwickler bin ich
+                  mittlerweile in einer Ausbildung als Fachinformatiker für
+                  Anwendungsentwicklung. Außerdem probiere ich mich etwas an UI
+                  & UX Design oder drehe & schneide hin und wieder
+                  (Musik-)Videos für Freunde.
+                </p>
+                <p>
+                  Hauptberuflich bin ich eher im Bereich Web-Entwicklung (HTML,
+                  CSS, JS, PHP & MySQL) unterwegs. Privat wiederum im Bereich
+                  der App-Entwicklung (Kotlin, Flutter/Dart).
+                </p>
+              </div>
             </div>
           </main>
 
           <footer>
-            {social.footer.map(item => (
-              <MenuItem key={item.name} item={item} />
-            ))}
+            <div id="footer">
+              {social.footer.map(item => (
+                <MenuItem key={item.name} item={item} />
+              ))}
+            </div>
           </footer>
         </div>
       )}

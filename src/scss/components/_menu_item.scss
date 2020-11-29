@@ -1,0 +1,32 @@
+.menu-item {
+  width: max-content;
+  display: flex;
+  word-wrap: none;
+  align-items: center;
+  line-height: 1.6rem;
+  text-transform: lowercase;
+  color: #212121;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    font-weight: 600;
+  }
+
+  &:active {
+    text-decoration: line-through;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.4rem;
+  }
+}

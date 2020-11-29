@@ -1,0 +1,16 @@
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  #logo {
+    max-width: 4rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: $viewport-width-mobile) {
+    height: 100%;
+    background-color: $color-secondary;
+  }
+}
