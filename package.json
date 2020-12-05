@@ -32,7 +32,8 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.1.1"
+    "prettier": "2.1.1",
+    "@hot-loader/react-dom": "^16.14.0"
   },
   "repository": {
     "type": "git",
