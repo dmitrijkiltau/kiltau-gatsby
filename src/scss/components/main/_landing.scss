@@ -1,0 +1,18 @@
+#landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2.25fr;
+  grid-template-areas: "picture ." "picture content";
+  align-items: flex-start;
+  padding: 1rem;
+
+  @media (max-width: $viewport-width-tablet-small) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "content" "picture";
+  }
+
+  @import "./components/main/landing/picture";
+  @import "./components/main/landing/content";
+}

@@ -1,73 +1,49 @@
-import React, { useEffect, createRef } from "react"
+import React, { useEffect } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
-import { gsap, TimelineLite, CSSPlugin, Power4 } from "gsap/all"
+import { gsap, TimelineLite, CSSPlugin, ScrollTrigger, Power4 } from "gsap/all"
 import Logo from "../assets/logo.svg"
+import MenuItem from "../components/menu-item"
+import Landing from "../components/landing"
+import Skills from "../components/skills"
 import social from "../data/social.json"
 import "../scss/styles.scss"
 
 library.add(fab)
-gsap.registerPlugin(CSSPlugin)
-
-const MenuItem = props => {
-  return (
-    <a
-      href={props.item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="menu-item"
-    >
-      <span className="icon">
-        <FontAwesomeIcon icon={["fab", props.item.icon]} />
-      </span>
-      {props.item.name}
-    </a>
-  )
-}
+gsap.registerPlugin(CSSPlugin, ScrollTrigger)
 
 const Home = () => {
   const timeline = new TimelineLite({ paused: true })
 
-  const appRef = createRef()
-  const pictureRef = createRef()
-  const contentRef = createRef()
-
   useEffect(() => {
     const menuItemAnimation =
-      window.outerWidth > 420
+      window.outerWidth > 1024
         ? { x: -150, ease: Power4.easeOut }
         : { y: -150, ease: Power4.easeOut }
 
     timeline
-      // Logo animation.
-      .fromTo(
+      // Logo.
+      .from(
         "#logo svg",
-        { opacity: 0, scale: 0, rotate: -180 },
-        { opacity: 1, scale: 1, rotate: 0, ease: Power4.easeOut, duration: 2 }
+        { opacity: 0, scale: 0, rotate: -180, duration: 1.3 },
+        0
       )
-      // Menu items animation.
+      // Picture.
+      .from("#picture", { y: -300, opacity: 0, duration: 1.5 }, 0.5)
+      // Content.
+      .from("#content", { y: 300, opacity: 0, duration: 1.5 }, 0.7)
+      // Menu items.
       .staggerFrom(".menu-item", 1, menuItemAnimation, 0.2)
-      // Picture animation.
-      .fromTo(
-        pictureRef.current,
-        { opacity: 0, y: -1000, delay: 1 },
-        { opacity: 1, y: 0, ease: Power4.easeOut, duration: 3 },
-        0
-      )
-      // Content animation.
-      .fromTo(
-        contentRef.current,
-        { opacity: 0, y: 2000, delay: 1 },
-        { opacity: 1, y: 0, ease: Power4.easeOut, duration: 3 },
-        0
-      )
-      // Hide scrollbar while animation is running.
-      .fromTo(appRef.current, { overflow: "hidden" }, { overflow: "auto" })
+      // Skill.
+      .from(".skill", { opacity: 0, duration: 1 }, 0)
+      // Skill bars.
+      .staggerFrom(".skill-content li", 1, { opacity: 0 }, 0.3)
+      // Skill progresses.
+      .staggerFrom(".skill-progress", 1, { width: 0, x: -100 }, 0.3)
       .play()
-  })
+  }, [timeline])
 
   return (
     <StaticQuery
@@ -82,7 +58,7 @@ const Home = () => {
         }
       `}
       render={data => (
-        <div className="App" ref={appRef}>
+        <div className="App">
           <Helmet
             title={data.site.siteMetadata.title}
             description={data.site.siteMetadata.description}
@@ -103,29 +79,8 @@ const Home = () => {
           </nav>
 
           <main>
-            <div id="landing">
-              <div id="picture">
-                <img src={"/images/ich.jpg"} alt="Dima" ref={pictureRef} />
-              </div>
-
-              <div id="content" ref={contentRef}>
-                <h1>
-                  Hi! Mein Name ist <s>Dmitrij Kiltau</s> Dima.
-                </h1>
-                <p>
-                  Angefangen als Hobby Web- & App-Entwickler bin ich
-                  mittlerweile in einer Ausbildung als Fachinformatiker für
-                  Anwendungsentwicklung. Außerdem probiere ich mich etwas an UI
-                  & UX Design oder drehe & schneide hin und wieder
-                  (Musik-)Videos für Freunde.
-                </p>
-                <p>
-                  Hauptberuflich bin ich eher im Bereich Web-Entwicklung (HTML,
-                  CSS, JS, PHP & MySQL) unterwegs. Privat wiederum im Bereich
-                  der App-Entwicklung (Kotlin, Flutter/Dart).
-                </p>
-              </div>
-            </div>
+            <Landing />
+            <Skills />
           </main>
 
           <footer>

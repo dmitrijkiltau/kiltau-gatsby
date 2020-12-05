@@ -1,0 +1,43 @@
+#skills {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr 1fr;
+  grid-template-areas: "section-skills skills-1 skills-2";
+  margin: 4rem 0;
+
+  @media (max-width: $viewport-width-tablet-small) {
+    grid-template-columns: 2.6rem 1fr;
+    grid-template-areas: "section-skills skills-1" "section-skills skills-2";
+  }
+
+  .section-name {
+    grid-area: section-skills;
+    width: 2.6rem;
+    height: 0;
+    margin-top: 2.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+  }
+
+  .category {
+    margin: -1rem 0 3rem 0;
+
+    &:first-child {
+      grid-area: skills-1;
+    }
+
+    &:last-child {
+      grid-area: skills-2;
+    }
+
+    .category-name {
+      margin: 0 0 1rem 0.5rem;
+      font-size: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    @import "./components/main/skills/skill";
+  }
+}

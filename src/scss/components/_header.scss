@@ -4,13 +4,17 @@ header {
   top: 0;
   z-index: 1;
 
+  @media (max-width: $viewport-width-tablet-large) {
+    height: 100%;
+    background-color: $color-secondary;
+  }
+
   #logo {
     max-width: 4rem;
     padding: 1rem;
-  }
 
-  @media (max-width: $viewport-width-mobile) {
-    height: 100%;
-    background-color: $color-secondary;
+    @media (max-width: $viewport-width-tablet-small) {
+      padding-left: 0;
+    }
   }
 }

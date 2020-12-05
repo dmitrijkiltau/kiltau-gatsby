@@ -1,0 +1,42 @@
+.skill {
+  background-color: transparentize($color-primary, 0.98);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+
+  .skill-name {
+    margin: -1.2rem 0 1rem 0;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .skill-content {
+    li {
+      height: 1.6em;
+      position: relative;
+      margin-bottom: 1rem;
+      font-size: 0.8em;
+      overflow: hidden;
+
+      .skill-bar,
+      .skill-progress,
+      .skill-content-name {
+        height: 100%;
+        position: absolute;
+      }
+
+      .skill-bar {
+        width: calc(100% + 1rem);
+        background-color: $color-secondary;
+      }
+
+      .skill-progress {
+        background-color: transparentize($color-primary, 0.92);
+      }
+
+      .skill-content-name {
+        line-height: 1.5em;
+        margin: 0.15rem 0 0 1rem;
+      }
+    }
+  }
+}

@@ -1,33 +1,33 @@
 nav {
   grid-area: nav;
-  position: sticky;
-  top: 3.5rem;
-  right: 0;
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
   z-index: 1;
+
+  @media (max-width: $viewport-width-tablet-large) {
+    height: 100%;
+    position: sticky;
+    top: 0;
+    right: 0;
+    background-color: $color-secondary;
+  }
 
   #menu {
     margin-right: -1.5rem;
     transform: rotate(90deg);
 
-    .menu-item {
-      .icon {
-        transform: rotate(-90deg);
-      }
-    }
-  }
-
-  @media (max-width: $viewport-width-mobile) {
-    height: 100%;
-    top: 0;
-    background-color: $color-secondary;
-
-    #menu {
+    @media (max-width: $viewport-width-tablet-large) {
       margin-right: 0;
       padding: 1rem;
       transform: rotate(0);
+    }
 
-      .menu-item {
-        .icon {
+    .menu-item {
+      .icon {
+        transform: rotate(-90deg);
+
+        @media (max-width: $viewport-width-tablet-large) {
           transform: rotate(0);
         }
       }

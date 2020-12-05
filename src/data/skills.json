@@ -1,0 +1,53 @@
+{
+  "name": "Skills",
+  "categories": [
+    {
+      "name": "beruflich",
+      "skills": [
+        {
+          "name": "Webentwicklung",
+          "contents": [
+            {
+              "name": "HTML",
+              "progress": 95
+            },
+            {
+              "name": "(S)CSS",
+              "progress": 90
+            },
+            {
+              "name": "(Node)JS (React, Gatsby)",
+              "progress": 70
+            },
+            {
+              "name": "PHP (WordPress)",
+              "progress": 65
+            },
+            {
+              "name": "(My)SQL",
+              "progress": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "privat",
+      "skills": [
+        {
+          "name": "Appentwicklung",
+          "contents": [
+            {
+              "name": "Kotlin",
+              "progress": 40
+            },
+            {
+              "name": "Dart",
+              "progress": 70
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
